@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Great Recession & Obama's Election — US History</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+  :root {
+    --ink: #1c1c1e;
+    --paper: #f7f4ef;
+    --cream: #eee9df;
+    --border: #d4cabf;
+    --muted: #7a7068;
+    --recession-dark: #1a2744;
+    --recession-mid: #2d4a7a;
+    --recession-red: #c0392b;
+    --obama-blue: #1a3a6b;
+    --obama-gold: #c8963c;
+    --obama-red: #b91c1c;
+    --green: #1a4731;
+    --divider: #d4cabf;
+    --highlight: #fef9ec;
+    --section-bg: #ffffff;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 15.5px;
+    line-height: 1.7;
+  }
+
+  /* ── PART DIVIDERS ── */
+  .part-banner {
+    padding: 1.1rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    max-width: 900px;
+    margin: 0 auto 0;
+  }
+  .part-badge {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 2.4rem;
+    font-style: italic;
+    line-height: 1;
+    opacity: 0.25;
+    flex-shrink: 0;
+  }
+  .part-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+    opacity: 0.6;
+    margin-bottom: 0.15rem;
+  }
+  .part-title {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 1.4rem;
+    line-height: 1.2;
+  }
+  .part-time {
+    margin-left: auto;
+    font-size: 0.75rem;
+    opacity: 0.5;
+    font-style: italic;
+    white-space: nowrap;
+  }
+
+  /* ── MASTHEADS ── */
+  .masthead {
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .masthead-hero {
+    width: 100%;
+    max-height: 240px;
+    object-fit: cover;
+    object-position: center 35%;
+    display: block;
+  }
+  .masthead-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(10,20,50,0.82) 55%, rgba(10,20,50,0.3) 100%);
+  }
+  .masthead-text {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 1.5rem 2rem 1.6rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .masthead-eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 0.35rem;
+    font-weight: 500;
+  }
+  .masthead h1 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 2.2rem;
+    line-height: 1.1;
+    color: white;
+    margin-bottom: 0.3rem;
+  }
+  .masthead h1 em { font-style: italic; color: var(--obama-gold); }
+  .masthead-sub {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.65);
+    font-style: italic;
+  }
+  .masthead-pills {
+    display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.9rem;
+  }
+  .pill {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 3px;
+    padding: 0.2rem 0.65rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+  }
+
+  /* ── NAME BAR ── */
+  .name-bar {
+    background: var(--cream);
+    border-bottom: 2px solid var(--border);
+    padding: 0.85rem 2rem;
+  }
+  .name-bar-inner {
+    max-width: 900px; margin: 0 auto;
+    display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;
+  }
+  .name-bar label {
+    font-size: 0.72rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--muted);
+    font-weight: 600; white-space: nowrap;
+  }
+  .name-bar input {
+    flex: 1; min-width: 150px;
+    border: none; border-bottom: 2px solid var(--border);
+    background: transparent;
+    font-family: 'DM Sans', sans-serif; font-size: 0.95rem;
+    padding: 0.15rem 0.35rem; color: var(--ink); outline: none;
+  }
+  .name-bar input:focus { border-bottom-color: var(--obama-blue); }
+
+  /* ── MAIN ── */
+  main { max-width: 900px; margin: 0 auto; padding: 1.5rem 2rem 3rem; }
+
+  /* ── SECTIONS ── */
+  .section {
+    background: var(--section-bg);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    margin-bottom: 1.8rem;
+    overflow: hidden;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+  }
+  .section-header {
+    display: flex; align-items: center; gap: 1rem;
+    padding: 0.9rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .sh-recession  { background: var(--recession-dark); color: white; }
+  .sh-recession2 { background: var(--recession-mid); color: white; }
+  .sh-red        { background: var(--recession-red); color: white; }
+  .sh-obama      { background: var(--obama-blue); color: white; }
+  .sh-obama2     { background: #14325a; color: white; }
+  .sh-gold       { background: var(--obama-gold); color: #1a1a1a; }
+  .sh-green      { background: var(--green); color: white; }
+  .sh-dark       { background: #222; color: white; }
+
+  .snum {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem; font-style: italic;
+    opacity: 0.4; line-height: 1; min-width: 1.8rem;
+  }
+  .stb { flex: 1; }
+  .slabel {
+    font-size: 0.65rem; letter-spacing: 0.15em;
+    text-transform: uppercase; opacity: 0.65; margin-bottom: 0.1rem;
+  }
+  .stitle {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.05rem; line-height: 1.2;
+  }
+  .stime {
+    font-size: 0.72rem; opacity: 0.6;
+    white-space: nowrap; font-style: italic;
+  }
+  .section-body { padding: 1.3rem 1.5rem; }
+
+  /* ── TYPOGRAPHY ── */
+  .prompt {
+    font-size: 0.92rem; color: var(--muted);
+    font-style: italic; margin-bottom: 0.7rem; line-height: 1.5;
+  }
+  .qhead {
+    font-weight: 600; font-size: 0.9rem;
+    color: var(--obama-blue); margin-bottom: 0.45rem;
+  }
+  .qhead.red { color: var(--recession-red); }
+  .helper { font-size: 0.8rem; color: var(--muted); font-style: italic; margin-bottom: 0.4rem; }
+
+  textarea {
+    width: 100%;
+    border: 1px solid var(--border); border-radius: 2px;
+    padding: 0.7rem; font-family: 'DM Sans', sans-serif;
+    font-size: 0.92rem; line-height: 1.6; color: var(--ink);
+    background: #fefdfb; resize: vertical; outline: none;
+    transition: border-color 0.2s;
+  }
+  textarea:focus { border-color: var(--obama-blue); }
+
+  hr.div { border: none; border-top: 1px solid var(--border); margin: 1.1rem 0; }
+
+  /* ── STAT CARDS ── */
+  .stat-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 0.9rem; margin: 1rem 0;
+  }
+  .stat-card {
+    background: var(--recession-dark);
+    color: white; border-radius: 3px;
+    padding: 1rem 1.1rem; text-align: center;
+  }
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem; line-height: 1;
+    color: #ff8a80; margin-bottom: 0.3rem;
+  }
+  .stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.65); line-height: 1.4; }
+
+  /* ── HEADLINE BOX ── */
+  .headline-box {
+    background: var(--ink); color: white;
+    border-radius: 3px; padding: 1.2rem 1.4rem; margin-bottom: 1rem;
+  }
+  .headline-flag {
+    font-size: 0.65rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: rgba(255,255,255,0.45);
+    margin-bottom: 0.6rem; font-weight: 600;
+  }
+  .headline-item {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 0.55rem 0;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem; line-height: 1.3; color: rgba(255,255,255,0.9);
+  }
+  .headline-item:first-of-type { border-top: none; }
+  .headline-date { font-size: 0.72rem; color: rgba(255,255,255,0.4); font-family: 'DM Sans', sans-serif; margin-top: 0.15rem; }
+
+  /* ── SOURCE BOX ── */
+  .source-box {
+    background: var(--highlight);
+    border-left: 4px solid var(--obama-gold);
+    padding: 1.1rem 1.3rem; margin-bottom: 1.1rem; font-size: 0.92rem;
+  }
+  .source-box.red { border-left-color: var(--recession-red); }
+  .slbl {
+    font-size: 0.65rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--muted);
+    font-weight: 600; margin-bottom: 0.45rem;
+  }
+  .stext { font-style: italic; line-height: 1.75; color: #3a3028; }
+  .scite { font-size: 0.76rem; color: var(--muted); margin-top: 0.45rem; }
+
+  /* ── CARTOON BOX ── */
+  .cartoon-box {
+    border: 1px solid var(--border); border-radius: 3px;
+    overflow: hidden; margin: 1rem 0;
+  }
+  .cartoon-header {
+    background: #2c2c2c; color: white;
+    padding: 0.6rem 1rem;
+    font-size: 0.72rem; letter-spacing: 0.1em;
+    text-transform: uppercase; font-weight: 600;
+  }
+  .cartoon-img-wrap {
+    background: #f0ece4;
+    padding: 1rem; text-align: center;
+    min-height: 220px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .cartoon-img-wrap img {
+    max-width: 100%; max-height: 340px;
+    object-fit: contain; display: block; margin: 0 auto;
+    border: 1px solid var(--border);
+  }
+  .cartoon-placeholder {
+    color: var(--muted); font-style: italic; font-size: 0.88rem; text-align: center; padding: 2rem;
+  }
+  .cartoon-caption {
+    padding: 0.75rem 1rem;
+    font-size: 0.82rem; color: var(--muted);
+    border-top: 1px solid var(--border);
+    background: #faf8f4;
+  }
+
+  /* ── TIMELINE ── */
+  .timeline { margin: 0.8rem 0; }
+  .tl-item { margin-bottom: 1.3rem; }
+  .tl-header { display: flex; gap: 0.9rem; align-items: flex-start; margin-bottom: 0.5rem; }
+  .tl-date {
+    font-family: 'DM Serif Display', serif; font-style: italic;
+    font-size: 0.85rem; color: var(--recession-red);
+    min-width: 75px; padding-top: 0.1rem; flex-shrink: 0;
+  }
+  .tl-content { font-size: 0.91rem; line-height: 1.55; }
+  .tl-content strong { color: var(--recession-dark); }
+  .tl-img {
+    width: 100%; max-height: 200px;
+    object-fit: cover; border-radius: 2px;
+    border: 1px solid var(--border); display: block;
+  }
+
+  /* ── VIDEO BOX ── */
+  .video-box {
+    background: #111; border-radius: 3px;
+    padding: 1.4rem; margin-bottom: 1rem; color: white;
+  }
+  .video-box p { color: rgba(255,255,255,0.65); font-size: 0.88rem; margin-bottom: 0.5rem; }
+  .video-title {
+    font-family: 'DM Serif Display', serif; font-size: 1.05rem;
+    color: var(--obama-gold); margin-bottom: 0.5rem;
+  }
+  .video-btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: #c0392b; color: white; text-decoration: none;
+    padding: 0.6rem 1.2rem; border-radius: 3px;
+    font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
+    font-weight: 600; letter-spacing: 0.02em; margin-top: 0.4rem;
+    transition: background 0.2s;
+  }
+  .video-btn:hover { background: #a93226; }
+  .video-btn.blue { background: var(--obama-blue); }
+  .video-btn.blue:hover { background: #122d54; }
+  .video-note { font-size: 0.74rem; color: rgba(255,255,255,0.35); margin-top: 0.6rem; }
+
+  /* ── DISCUSSION BOX ── */
+  .disc {
+    background: #fffbec; border: 1px solid #e8d68a;
+    border-radius: 3px; padding: 0.9rem 1.1rem;
+    margin: 0.9rem 0; font-size: 0.92rem;
+  }
+  .disc strong { color: var(--recession-red); }
+
+  /* ── PORTRAIT ── */
+  .portrait-float {
+    float: right; width: 180px; margin: 0 0 1rem 1.3rem;
+    border-radius: 3px; border: 2px solid var(--border);
+    object-fit: cover; display: block;
+  }
+  .clearfix::after { content: ''; display: table; clear: both; }
+
+  /* ── FULL IMAGE ── */
+  .full-img {
+    width: 100%; border-radius: 2px;
+    border: 1px solid var(--border);
+    display: block; object-fit: cover;
+    max-height: 260px;
+  }
+  .img-caption {
+    font-size: 0.76rem; color: var(--muted);
+    font-style: italic; text-align: center;
+    padding: 0.4rem 0 0.8rem; margin-top: 0.3rem;
+  }
+
+  /* ── SCALE ── */
+  .scale-labels {
+    display: flex; justify-content: space-between;
+    font-size: 0.78rem; color: var(--muted);
+    font-style: italic; margin-bottom: 0.3rem;
+  }
+  input[type=range] { width: 100%; accent-color: var(--obama-blue); cursor: pointer; }
+  .scale-val {
+    text-align: center; font-family: 'DM Serif Display', serif;
+    font-size: 1.4rem; color: var(--obama-blue); margin-top: 0.2rem;
+  }
+
+  /* ── BRAINSTORM ── */
+  .bstorm { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin: 0.5rem 0; }
+  .bi { display: flex; align-items: center; gap: 0.5rem; }
+  .bi-n {
+    font-family: 'DM Serif Display', serif; font-style: italic;
+    font-size: 1.1rem; color: var(--recession-red); min-width: 1.4rem;
+  }
+  .bi input {
+    flex: 1; border: none; border-bottom: 1.5px solid var(--border);
+    background: transparent; font-family: 'DM Sans', sans-serif;
+    font-size: 0.92rem; padding: 0.15rem 0.3rem; color: var(--ink); outline: none;
+  }
+  .bi input:focus { border-bottom-color: var(--obama-blue); }
+
+  /* ── SYNTHESIS ── */
+  .synthesis-box {
+    background: var(--obama-blue); color: white;
+    border-radius: 3px; padding: 1.2rem 1.4rem; margin-bottom: 1rem;
+  }
+  .synthesis-box p { color: rgba(255,255,255,0.75); font-size: 0.88rem; margin-bottom: 0.5rem; }
+  .synthesis-box textarea {
+    background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3);
+    color: white; margin-top: 0.6rem;
+  }
+  .synthesis-box textarea::placeholder { color: rgba(255,255,255,0.35); }
+  .synthesis-box textarea:focus { border-color: rgba(255,255,255,0.65); }
+
+  /* ── PART BREAK ── */
+  .part-break {
+    border: none;
+    border-top: 3px solid var(--ink);
+    margin: 2.2rem 0 1rem;
+    opacity: 0.12;
+  }
+
+  /* ── SAVE BAR ── */
+  .save-bar {
+    position: fixed; bottom: 1.2rem; right: 1.5rem;
+    display: flex; gap: 0.7rem; align-items: center; z-index: 100;
+  }
+  .save-status {
+    background: rgba(26,58,107,0.9); color: white;
+    font-size: 0.72rem; padding: 0.28rem 0.75rem;
+    border-radius: 20px; opacity: 0; transition: opacity 0.4s;
+  }
+  .save-status.visible { opacity: 1; }
+  .btn-pdf {
+    background: var(--recession-red); color: white;
+    border: none; border-radius: 3px; padding: 0.5rem 1.1rem;
+    font-family: 'DM Sans', sans-serif; font-size: 0.8rem;
+    cursor: pointer; font-weight: 600; letter-spacing: 0.03em;
+    transition: background 0.2s;
+  }
+  .btn-pdf:hover { background: #a93226; }
+
+  /* ── PRINT ── */
+  @media print {
+    .save-bar { display: none; }
+    body { background: white; font-size: 12.5px; }
+    .section { break-inside: avoid; box-shadow: none; }
+    main { padding: 0.5rem; }
+    .masthead, .sh-recession, .sh-obama, .sh-red, .sh-gold, .sh-green, .sh-dark, .sh-obama2, .sh-recession2 {
+      -webkit-print-color-adjust: exact; print-color-adjust: exact;
+    }
+    .score-banner { display: flex !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+  /* SCORE BANNER */
+  .score-banner {
+    background: var(--obama-blue);
+    color: white;
+    padding: 0.9rem 1.4rem;
+    font-family: 'DM Serif Display', serif;
+    border-radius: 3px;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .score-banner .score-main { font-size: 1.2rem; font-weight: 700; }
+  .score-banner .score-detail { font-size: 0.78rem; opacity: 0.75; font-style: italic; font-family: 'DM Sans', sans-serif; }
+  .score-banner.incomplete { background: #7a3500; }
+  @media screen { .score-banner { display: none; } }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     PART 1 MASTHEAD — GREAT RECESSION
+═══════════════════════════════════════════ -->
+<div class="masthead" style="position:relative; min-height: 200px; background: var(--recession-dark);">
+  <img src="https://raw.githubusercontent.com/mdhallman-bot/obama-election-recession/main/recession-image.jpg" alt="Great Recession" class="masthead-hero" onerror="this.style.display='none'">
+  <div class="masthead-overlay"></div>
+  <div class="masthead-text" style="position:relative;">
+    <div class="masthead-eyebrow">Unit 9 · Modern America · Part One</div>
+    <h1>The <em>Great Recession</em></h1>
+    <div class="masthead-sub">When the economy collapsed — and who paid the price</div>
+    <div class="masthead-pills">
+      <span class="pill">US History</span>
+      <span class="pill">~50 Minutes</span>
+      <span class="pill">General Education</span>
+    </div>
+  </div>
+</div>
+
+<div class="name-bar">
+  <div class="name-bar-inner">
+    <label>Name</label>
+    <input type="text" id="studentName" placeholder="First and Last Name" autocomplete="off">
+    <label>Period</label>
+    <input type="text" id="period" placeholder="—" style="max-width:75px;" autocomplete="off">
+    <label>Date</label>
+    <input type="text" id="dateField" placeholder="—" style="max-width:105px;" autocomplete="off">
+  </div>
+</div>
+
+<main>
+
+<div class="score-banner" id="scoreBanner">
+  <span class="score-main" id="scoreMain"></span>
+  <span class="score-detail" id="scoreDetail"></span>
+</div>
+
+<!-- ─── SECTION 1: OPENING HOOK ─── -->
+<div class="section">
+  <div class="section-header sh-recession">
+    <div class="snum">1</div>
+    <div class="stb">
+      <div class="slabel">Opening · 10 minutes</div>
+      <div class="stitle">The Bottom Falls Out</div>
+    </div>
+    <div class="stime">~10 min</div>
+  </div>
+  <div class="section-body">
+
+    <div class="headline-box">
+      <div class="headline-flag">📰 Real Headlines — Fall 2008</div>
+      <div class="headline-item">
+        "Lehman Brothers Files for Bankruptcy"
+        <div class="headline-date">New York Times — September 15, 2008</div>
+      </div>
+      <div class="headline-item">
+        "Dow Drops 777 Points — Largest Single-Day Drop in History"
+        <div class="headline-date">Wall Street Journal — September 29, 2008</div>
+      </div>
+      <div class="headline-item">
+        "Home Foreclosures Surge 81% in 2008"
+        <div class="headline-date">CNN Money — January 15, 2009</div>
+      </div>
+      <div class="headline-item">
+        "US Unemployment Hits 10% — Highest in 26 Years"
+        <div class="headline-date">Associated Press — October 2, 2009</div>
+      </div>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-num">8.7M</div>
+        <div class="stat-label">Americans lost their jobs between 2008–2010</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">$11T</div>
+        <div class="stat-label">In household wealth evaporated — savings, retirement, home values</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">3.8M</div>
+        <div class="stat-label">Homes foreclosed on in 2010 alone</div>
+      </div>
+    </div>
+
+    <p class="prompt">Look at the headlines and numbers above. What do you notice? What questions do they raise for you?</p>
+    <textarea id="hook_reaction" rows="3" placeholder="Write your first reaction…"></textarea>
+
+    <hr class="div">
+
+    <p class="qhead red">Quick brainstorm: What do you already know about the Great Recession?</p>
+    <div class="bstorm">
+      <div class="bi"><span class="bi-n">1.</span><input type="text" id="br1" placeholder="What I know or think I know…"></div>
+      <div class="bi"><span class="bi-n">2.</span><input type="text" id="br2" placeholder="What I know or think I know…"></div>
+      <div class="bi"><span class="bi-n">3.</span><input type="text" id="br3" placeholder="What I know or think I know…"></div>
+      <div class="bi"><span class="bi-n">4.</span><input type="text" id="br4" placeholder="What I know or think I know…"></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─── SECTION 2: HUMAN IMPACT ─── -->
+<div class="section">
+  <div class="section-header sh-recession2">
+    <div class="snum">2</div>
+    <div class="stb">
+      <div class="slabel">Human Impact · 20 minutes</div>
+      <div class="stitle">The People Behind the Numbers</div>
+    </div>
+    <div class="stime">~20 min</div>
+  </div>
+  <div class="section-body">
+
+    <p style="font-size:0.92rem; margin-bottom:1rem;">The numbers tell part of the story. But behind each statistic is a family. The Great Recession didn't just happen on Wall Street — it happened in living rooms, parking lots, and kitchen tables across America. Read the accounts below.</p>
+
+    <div class="source-box red">
+      <div class="slbl">Account A — A Homeowner in Cleveland, Ohio (2009)</div>
+      <div class="stext">"We bought the house in 2005. The bank told us we qualified — we were so excited. Two years later the payment jumped because it was an adjustable rate, and we couldn't keep up. We tried everything. By the time the foreclosure notice came, we had three kids. We had 30 days to leave the only home they'd ever known. My husband sat in the car in the driveway for an hour before we drove away."</div>
+      <div class="scite">— Oral history collected by the Federal Reserve Bank of Cleveland, 2009</div>
+    </div>
+
+    <div class="source-box red">
+      <div class="slbl">Account B — A Factory Worker in Detroit, Michigan (2009)</div>
+      <div class="stext">"I worked at that plant for 22 years. When GM went bankrupt, I lost my job, my pension, and my health insurance in the same week. I was 54. Nobody's hiring a 54-year-old machinist. I started applying to Walmart. My wife cried. I cried. You work your whole life thinking that's enough. Turns out it wasn't."</div>
+      <div class="scite">— Interview, Detroit Free Press, June 2009</div>
+    </div>
+
+    <img src="https://raw.githubusercontent.com/mdhallman-bot/obama-election-recession/main/recession-image.jpg" alt="Foreclosure signs on homes" class="full-img" onerror="this.style.display='none'" style="margin-bottom:0.3rem;">
+    <div class="img-caption">Foreclosure signs became a defining image of the Great Recession across American suburbs — [photographer/source]</div>
+
+    <hr class="div">
+
+    <p class="qhead red">Analysis Questions</p>
+
+    <p class="prompt">1. What specific details from these accounts hit hardest? Why does the human story land differently than the statistics?</p>
+    <textarea id="human1" rows="3" placeholder="Write your response…"></textarea>
+
+    <p class="prompt" style="margin-top:0.8rem;">2. Who seems to be bearing the most pain in these accounts — the banks, the government, or ordinary people? Is that fair? Explain.</p>
+    <textarea id="human2" rows="4" placeholder="Use evidence from the accounts…"></textarea>
+
+  </div>
+</div>
+
+<!-- ─── SECTION 3: POLITICAL CARTOONS — RECESSION ─── -->
+<div class="section">
+  <div class="section-header sh-red">
+    <div class="snum">3</div>
+    <div class="stb">
+      <div class="slabel">Political Cartoon Analysis · 15 minutes</div>
+      <div class="stitle">Who Caused This — and Who Got Blamed?</div>
+    </div>
+    <div class="stime">~15 min</div>
+  </div>
+  <div class="section-body">
+
+    <p style="font-size:0.92rem; margin-bottom:1rem;">When the crisis hit, the government bailed out the biggest banks and Wall Street firms. But in media and political debates, a very different story was being told about who was really at fault. This cartoon captures that contradiction.</p>
+
+    <div class="cartoon-box" style="margin-bottom:1.2rem;">
+      <div class="cartoon-header">📰 "The Pundits" — Steve Greenberg, 2008</div>
+      <div class="cartoon-img-wrap">
+        <img src="https://raw.githubusercontent.com/mdhallman-bot/obama-election-recession/main/recession-cartoon.jpg" alt="The Pundits recession cartoon" style="max-width:100%; max-height:420px; object-fit:contain; display:block; margin:0 auto;">
+      </div>
+      <div class="cartoon-caption">
+        <strong>Key details:</strong> A suited figure labeled "The Pundits" points at a figure labeled "The Poor" and says "This is all your fault... you bought a house you couldn't really afford!" Surrounding them in the rubble: AIG, Merrill Lynch, Lehman Brothers, GM, Bear Stearns, Washington Mutual — along with labels reading "Toxic Assets," "Executive Bonuses," "Bundled Subprime Mortgage Securities," "Mega-Deficits," and "Layoffs."
+      </div>
+    </div>
+
+    <p class="qhead red">Cartoon Analysis</p>
+
+    <p class="prompt">1. Describe what you see. Who are "The Pundits" and "The Poor"? What is happening between them? List at least three things you notice in the rubble around them.</p>
+    <textarea id="cartoon1_describe" rows="3" placeholder="Describe the cartoon in detail — the rubble labels matter…"></textarea>
+
+    <p class="prompt" style="margin-top:0.8rem;">2. Who is being blamed for the crisis in this cartoon? Look carefully at everything in the rubble. Does the evidence actually support that blame? What does the cartoonist think the real causes were?</p>
+    <textarea id="cartoon1_message" rows="4" placeholder="Use specific details from the cartoon as evidence…"></textarea>
+
+    <p class="prompt" style="margin-top:0.8rem;">3. Connect the cartoon to the human accounts in Section 2. Does the Cleveland homeowner or the Detroit factory worker fit the "The Poor" figure being blamed? Is the blame fair? Use evidence from both the cartoon and the accounts.</p>
+    <textarea id="cartoon1_agree" rows="4" placeholder="Connect the cartoon to the real stories from Section 2…"></textarea>
+
+  </div>
+</div>
+
+<!-- ═══ PART BREAK ═══ -->
+<hr class="part-break">
+
+<!-- ═══════════════════════════════════════════
+     PART 2 MASTHEAD — OBAMA'S ELECTION
+═══════════════════════════════════════════ -->
+<div class="masthead" style="position:relative; min-height:200px; background: var(--obama-blue); margin: 0 -2rem; width: calc(100% + 4rem);">
+  <img src="https://raw.githubusercontent.com/mdhallman-bot/obama-election-recession/main/obama-swearing-in.jpg" alt="Barack Obama Grant Park" class="masthead-hero" onerror="this.style.display='none'">
+  <div class="masthead-overlay" style="background: linear-gradient(to right, rgba(20,50,100,0.85) 50%, rgba(20,50,100,0.3) 100%);"></div>
+  <div class="masthead-text" style="position:relative;">
+    <div class="masthead-eyebrow">Unit 9 · Modern America · Part Two</div>
+    <h1><em>Yes We Can</em></h1>
+    <div class="masthead-sub">Barack Obama and the 2008 Election</div>
+    <div class="masthead-pills">
+      <span class="pill">~50 Minutes</span>
+      <span class="pill">Primary Sources</span>
+      <span class="pill">Political Cartoons</span>
+    </div>
+  </div>
+</div>
+
+<img src="https://raw.githubusercontent.com/mdhallman-bot/obama-election-recession/main/obama-swearing-in.jpg" alt="Barack Obama being sworn in as President" style="width:100%; max-height:320px; object-fit:cover; object-position:center 20%; display:block; margin-bottom:0;">
+<div style="font-size:0.76rem; color:var(--muted); font-style:italic; text-align:center; background:var(--cream); padding:0.4rem 1rem; margin-bottom:1.8rem;">Barack Obama takes the oath of office, January 20, 2009 — Washington D.C.</div>
+
+<!-- ─── SECTION 4: HISTORICAL SIGNIFICANCE ─── -->
+<div class="section" style="margin-top:0;">
+  <div class="section-header sh-obama">
+    <div class="snum">4</div>
+    <div class="stb">
+      <div class="slabel">Historical Significance · 12 minutes</div>
+      <div class="stitle">What This Moment Meant</div>
+    </div>
+    <div class="stime">~12 min</div>
+  </div>
+  <div class="section-body clearfix">
+
+    <img src="https://raw.githubusercontent.com/mdhallman-bot/obama-election-recession/main/obama-swearing-in.jpg" alt="Barack Obama" class="portrait-float" onerror="this.style.display='none'">
+
+    <p style="font-size:0.92rem; margin-bottom:0.9rem;">On November 4, 2008, Barack Obama was elected the 44th President of the United States — becoming the first African American to hold that office in the nation's 232-year history.</p>
+
+    <p style="font-size:0.92rem; margin-bottom:0.9rem;">To understand why this was extraordinary, you have to hold two timelines in your head at once: the timeline of American ideals — "all men are created equal" — and the timeline of American reality, which looked very different for Black Americans for most of the country's history.</p>
+
+    <div style="background: var(--cream); border-radius: 3px; padding: 1rem 1.2rem; margin-bottom:1rem;">
+      <p style="font-weight:600; font-size:0.88rem; color: var(--obama-blue); margin-bottom:0.6rem;">The arc of history — a quick timeline</p>
+      <div style="font-size:0.88rem; line-height:1.8;">
+        <div><span style="color:var(--recession-red); font-weight:600; min-width:45px; display:inline-block;">1865</span> 13th Amendment abolishes slavery — 89 years after the Declaration of Independence</div>
+        <div><span style="color:var(--recession-red); font-weight:600; min-width:45px; display:inline-block;">1896</span> Supreme Court upholds segregation in <em>Plessy v. Ferguson</em></div>
+        <div><span style="color:var(--recession-red); font-weight:600; min-width:45px; display:inline-block;">1955</span> Rosa Parks arrested; Montgomery Bus Boycott begins</div>
+        <div><span style="color:var(--recession-red); font-weight:600; min-width:45px; display:inline-block;">1963</span> Martin Luther King Jr. delivers "I Have a Dream" speech</div>
+        <div><span style="color:var(--recession-red); font-weight:600; min-width:45px; display:inline-block;">1965</span> Voting Rights Act passed — 100 years after the end of slavery</div>
+        <div><span style="color:var(--recession-red); font-weight:600; min-width:45px; display:inline-block;">2008</span> Barack Obama elected President — 43 years after the Voting Rights Act</div>
+      </div>
+    </div>
+
+    <div class="source-box">
+      <div class="slbl">Primary Source — Jesse Jackson at Grant Park, November 4, 2008</div>
+      <div class="stext">Television cameras caught civil rights leader Jesse Jackson — who had marched with Martin Luther King Jr. and stood beside him when he was assassinated in 1968 — weeping openly in the crowd as Obama's victory was announced. He said nothing. He didn't have to.</div>
+      <div class="scite">— CNN Election Night Coverage, November 4, 2008</div>
+    </div>
+
+    <img src="https://raw.githubusercontent.com/mdhallman-bot/obama-election-recession/main/jesse-jackson.jpg" alt="Jesse Jackson crying on election night 2008" style="width:100%; max-height:300px; object-fit:cover; object-position:center top; border-radius:3px; border:1px solid var(--border); display:block; margin-bottom:0.4rem;">
+    <div style="font-size:0.76rem; color:var(--muted); font-style:italic; text-align:center; margin-bottom:1rem;">Jesse Jackson weeping at Grant Park, Chicago, November 4, 2008 — CNN Election Night Coverage</div>
+
+    <p class="qhead">Reflection Questions</p>
+
+    <p class="prompt">1. Look at the arc of history timeline. What does it tell you about how long change takes in America? Does Obama's election feel like progress, completion, or something else?</p>
+    <textarea id="hist1" rows="3" placeholder="Write your reflection…"></textarea>
+
+    <p class="prompt" style="margin-top:0.8rem;">2. Jesse Jackson said nothing and didn't need to. What do you think he was feeling? What memories might have been going through his mind in that moment?</p>
+    <textarea id="hist2" rows="3" placeholder="Put yourself in his perspective…"></textarea>
+
+  </div>
+</div>
+
+<!-- ─── SECTION 5: POLITICAL CARTOON — STANDING ON SHOULDERS ─── -->
+<div class="section">
+  <div class="section-header sh-dark">
+    <div class="snum">5</div>
+    <div class="stb">
+      <div class="slabel">Political Cartoon Analysis · 12 minutes</div>
+      <div class="stitle">Standing on the Shoulders of Giants</div>
+    </div>
+    <div class="stime">~12 min</div>
+  </div>
+  <div class="section-body">
+
+    <p style="font-size:0.92rem; margin-bottom:0.8rem;">Matt Wuerker, a cartoonist for Politico, drew this image for Obama's inauguration. He later said that drawing the first Black president required him to think carefully about American history — not just the present moment, but everything that made the moment possible.</p>
+
+    <div class="cartoon-box">
+      <div class="cartoon-header">📰 "Standing on the Shoulders of Giants" — Matt Wuerker, Politico, January 20, 2009</div>
+      <div class="cartoon-img-wrap" style="background:#f8f5f0;">
+        <img src="https://raw.githubusercontent.com/mdhallman-bot/obama-election-recession/main/obama-cartoon.jpg" alt="Obama standing on shoulders of history - Matt Wuerker" style="max-width:100%; max-height:480px; object-fit:contain; display:block; margin:0 auto;">
+      </div>
+      <div class="cartoon-caption">
+        <strong>Artist:</strong> Matt Wuerker, Politico &nbsp;|&nbsp; <strong>Published:</strong> January 20, 2009 &nbsp;|&nbsp;
+        <strong>What to notice:</strong> Who is at the top? Who is in the middle tier? Who forms the foundation at the bottom? What does the building they're standing on represent?
+      </div>
+    </div>
+
+    <p class="qhead" style="margin-top:1rem;">Cartoon Analysis</p>
+
+    <p class="prompt">1. Describe the structure of the cartoon from bottom to top. Who do you see at each level? What do you think each figure represents? Look for clues in their clothing, poses, and any details you recognize.</p>
+    <textarea id="cartoon2_describe" rows="4" placeholder="Describe each level of the cartoon — bottom, middle, and top…"></textarea>
+
+    <p class="prompt" style="margin-top:0.8rem;">2. The cartoon's central idea is that Obama didn't get there alone — he is literally standing on the people who came before him. Who are some of the people or groups from the arc-of-history timeline in Section 4 that you think are represented in this structure? Why?</p>
+    <textarea id="cartoon2_message" rows="4" placeholder="Connect the cartoon to specific people or events from the timeline…"></textarea>
+
+    <p class="prompt" style="margin-top:0.8rem;">3. Look at Jesse Jackson's face in the photograph from Section 4. Now look at this cartoon. How do they tell the same story in two completely different ways? What does each one capture that the other can't?</p>
+    <textarea id="cartoon2_compare" rows="4" placeholder="Compare the photograph and the cartoon as two ways of capturing the same historical moment…"></textarea>
+
+    <div class="disc">
+      <strong>Discussion question:</strong> The cartoon suggests that individual achievement is always built on collective sacrifice. Do you agree? Can you think of other examples — in history or in your own life — where someone's success was built on what others did before them?
+    </div>
+
+  </div>
+</div>
+
+<!-- ─── SECTION 6: VIDEOS ─── -->
+<div class="section">
+  <div class="section-header sh-obama2">
+    <div class="snum">6</div>
+    <div class="stb">
+      <div class="slabel">Video + Primary Source · 15 minutes</div>
+      <div class="stitle">Obama in His Own Words</div>
+    </div>
+    <div class="stime">~15 min</div>
+  </div>
+  <div class="section-body">
+
+    <p style="font-size:0.92rem; margin-bottom:1rem;">Your teacher will play clips from two speeches. If you were absent, watch them on your own before completing the responses below.</p>
+
+    <div class="video-box" style="margin-bottom:0.8rem;">
+      <div class="video-title">📽 Video 1 — Election Night Victory Speech, Grant Park, Chicago</div>
+      <p>November 4, 2008. Obama addresses a crowd of 240,000 — and a nation watching on television. The Great Recession is weeks old. Two wars are ongoing. He is 47 years old.</p>
+      <a href="https://www.youtube.com/watch?v=yQqY83qxMCg" target="_blank" class="video-btn">▶ &nbsp;Watch Victory Speech</a>
+      <div class="video-note">Opens in a new tab. Return here to complete your notes.</div>
+    </div>
+
+    <div class="video-box">
+      <div class="video-title">📽 Video 2 — First Inaugural Address, Washington D.C.</div>
+      <p>January 20, 2009. The largest crowd ever assembled for a presidential inauguration watches Obama take the oath of office. He calls for a "new era of responsibility" and addresses the crisis directly.</p>
+      <a href="https://www.youtube.com/watch?v=ebFhFGw-Eu4" target="_blank" class="video-btn blue">▶ &nbsp;Watch Inaugural Address</a>
+      <div class="video-note">Opens in a new tab. Return here to complete your notes.</div>
+    </div>
+
+    <hr class="div">
+
+    <div class="source-box">
+      <div class="slbl">Primary Source Excerpt — Victory Speech, November 4, 2008</div>
+      <div class="stext">"If there is anyone out there who still doubts that America is a place where all things are possible; who still wonders if the dream of our founders is alive in our time; who still questions the power of our democracy — tonight is your answer... It's been a long time coming, but tonight, because of what we did on this day, in this election, at this defining moment, change has come to America."</div>
+      <div class="scite">— Barack Obama, Grant Park, Chicago, November 4, 2008</div>
+    </div>
+
+    <div class="source-box">
+      <div class="slbl">Primary Source Excerpt — Inaugural Address, January 20, 2009</div>
+      <div class="stext">"Today I say to you that the challenges we face are real. They are serious and they are many. They will not be met easily or in a short span of time. But know this, America — they will be met... Let us remember that if this financial crisis taught us anything, it's that we cannot have a thriving Wall Street while Main Street suffers."</div>
+      <div class="scite">— Barack Obama, Washington D.C., January 20, 2009</div>
+    </div>
+
+    <p class="qhead">Speech Analysis</p>
+
+    <p class="prompt">1. In the victory speech, Obama says "tonight is your answer." Answer to what? What doubts or questions does he think his election resolves?</p>
+    <textarea id="speech1" rows="3" placeholder="Use the excerpt and your knowledge…"></textarea>
+
+    <p class="prompt" style="margin-top:0.8rem;">2. In the inaugural address, Obama quotes the financial crisis directly: "Wall Street while Main Street suffers." What does this phrase mean? Why does he use it on inauguration day?</p>
+    <textarea id="speech2" rows="3" placeholder="Explain the quote and its significance…"></textarea>
+
+  </div>
+</div>
+
+<!-- ─── SECTION 7: SYNTHESIS EXIT TICKET ─── -->
+<div class="section">
+  <div class="section-header sh-gold">
+    <div class="snum">7</div>
+    <div class="stb">
+      <div class="slabel">Synthesis Exit Ticket · 13 minutes</div>
+      <div class="stitle">Connecting the Two Halves</div>
+    </div>
+    <div class="stime">~13 min</div>
+  </div>
+  <div class="section-body">
+
+    <p style="font-size:0.92rem; margin-bottom:1rem;">Today you studied two things that were happening at the same time: a country in economic free-fall, and a historic election. These are not separate stories — they are one story.</p>
+
+    <div class="disc">
+      <strong>The big question:</strong> Would Barack Obama have been elected president in 2008 without the Great Recession? Think carefully — there's no single right answer, but you need evidence to defend your position.
+    </div>
+
+    <p class="prompt">Write your argument in 3–5 sentences. Take a position, support it with at least two pieces of specific evidence from today's lesson, and explain the connection between the economic crisis and the election outcome.</p>
+    <textarea id="synthesis" rows="6" placeholder="State your position and defend it with evidence from both halves of today's lesson…"></textarea>
+
+    <hr class="div">
+
+    <p class="qhead">Scale: How connected were these two events?</p>
+    <div class="scale-labels">
+      <span>Totally separate — Obama would have won anyway</span>
+      <span>Completely connected — the crisis made him president</span>
+    </div>
+    <input type="range" id="scale" min="1" max="10" value="5" oninput="document.getElementById('scaleVal').textContent = this.value">
+    <div class="scale-val" id="scaleVal">5</div>
+
+    <hr class="div">
+
+    <p class="prompt">What is the most surprising thing you learned today — from either half of the lesson?</p>
+    <textarea id="exit_learned" rows="2" placeholder="Be specific…"></textarea>
+
+    <p class="prompt" style="margin-top:0.8rem;">What question are you still thinking about?</p>
+    <textarea id="exit_question" rows="2" placeholder="What are you still wondering?"></textarea>
+
+  </div>
+</div>
+
+</main>
+
+<div class="save-bar">
+  <span class="save-status" id="saveStatus">Saved</span>
+  <button class="btn-pdf" onclick="printPDF()">Export PDF</button>
+</div>
+
+<script>
+const SAVE_KEY = 'obama_recession_lesson';
+const MIN_CHARS = 10;
+
+const gradeableFields = [
+  'hook_reaction',
+  'human1','human2',
+  'cartoon1_describe','cartoon1_message','cartoon1_agree',
+  'hist1','hist2',
+  'cartoon2_describe','cartoon2_message','cartoon2_compare',
+  'speech1','speech2',
+  'synthesis','exit_learned','exit_question'
+];
+
+const allFields = [
+  'studentName','period','dateField',
+  'br1','br2','br3','br4',
+  ...gradeableFields
+];
+
+function calcScore() {
+  let completed = 0;
+  gradeableFields.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && el.value.trim().length >= MIN_CHARS) completed++;
+  });
+  return { completed, total: gradeableFields.length, pct: Math.round((completed / gradeableFields.length) * 100) };
+}
+
+function updateScoreBanner() {
+  const { completed, total, pct } = calcScore();
+  const banner = document.getElementById('scoreBanner');
+  const name = document.getElementById('studentName').value.trim() || 'Student';
+  document.getElementById('scoreMain').textContent = `Completion: ${pct}%  (${completed}/${total} responses)`;
+  document.getElementById('scoreDetail').textContent = `${name} · The Great Recession & Obama's Election · Graded for completion (min. ${MIN_CHARS} characters per response)`;
+  banner.classList.toggle('incomplete', pct < 100);
+}
+
+function saveData() {
+  const data = {};
+  allFields.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) data[id] = el.value;
+  });
+  data['scale'] = document.getElementById('scale').value;
+  localStorage.setItem(SAVE_KEY, JSON.stringify(data));
+  updateScoreBanner();
+  const s = document.getElementById('saveStatus');
+  s.textContent = 'Saved ✓';
+  s.classList.add('visible');
+  setTimeout(() => s.classList.remove('visible'), 2000);
+}
+
+function loadData() {
+  const raw = localStorage.getItem(SAVE_KEY);
+  if (!raw) return;
+  try {
+    const data = JSON.parse(raw);
+    allFields.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && data[id] !== undefined) el.value = data[id];
+    });
+    if (data['scale']) {
+      document.getElementById('scale').value = data['scale'];
+      document.getElementById('scaleVal').textContent = data['scale'];
+    }
+  } catch(e) {}
+  updateScoreBanner();
+}
+
+let debounceTimer;
+function debouncedSave() {
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(saveData, 600);
+}
+
+allFields.forEach(id => {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener('input', debouncedSave);
+});
+document.getElementById('scale').addEventListener('input', debouncedSave);
+
+function printPDF() {
+  saveData();
+  updateScoreBanner();
+  document.getElementById('scoreBanner').style.display = 'flex';
+  window.print();
+  document.getElementById('scoreBanner').style.display = '';
+}
+
+loadData();
+</script>
+</body>
+</html>
